@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/vote2.png'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: rgb(19, 16, 16);
+  position: relative; 
+  min-height: 100vh; 
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(178, 171, 171, 0.5); 
+  z-index: -1; 
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+button {
+  background-color: #4316da;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0c3690; 
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #d1d5db; 
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  width: 300px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vote-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.vote-card {
+  width: 30%; 
+  padding: 20px;
+  color: #132e60;
+  min-width: 300px; 
+  max-width: 400px; 
+  height: auto; 
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vote-card h1 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.vote-bar {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  height: 40px;
+  width: 100%;
+  background-color: #e5e7eb; 
+}
+
+.vote-bar p {
+  z-index: 1;
+  padding: 10px;
+}
+
+.vote-bar .yes,
+.vote-bar .no {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.vote-bar .yes {
+  background-color: rgba(79, 127, 203, 0.3);
+}
+
+.vote-bar .no {
+  background-color: rgba(49, 66, 161, 0.3);
+}
+
+.vote-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.vote-bar .yes-progress {
+  background-color: #3962a5;
+}
+
+.vote-bar .no-progress {
+  background-color: #263c83; 
+}
+
+@media (max-width: 768px) {
+  .vote-card {
+    width: 45%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .vote-card {
+    width: 100%; 
+  }
+}
